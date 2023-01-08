@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.box {
+  text-align: center;
+}
+.container .box #happy {
+  background-image: url(./3.gif);
+  background-position: left center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+.container .box #bir {
+  background-image: url(./3.gif);
+  background-position: center center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+.container .box #name {
+  background-image: url(./4.gif);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.box ul li {
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #13f9a3;
+  position: absolute;
+  left: 10vw;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+  animation: animate 12s linear infinite;
+}
+
+.box ul li:nth-child(2) {
+  left: 60vw;
+  animation-delay: 2s;
+}
+
+.box ul li:nth-child(3) {
+  left: 30vw;
+  animation-delay: 4s;
+}
+
+.box ul li:nth-child(4) {
+  left: 70vw;
+  animation-delay: 6s;
+}
+
+.box ul li:nth-child(5) {
+  left: 85vw;
+  animation-delay: 8s;
+}
+@keyframes animate {
+  0% {
+    opacity: 1;
+    scale: 0;
+    bottom: 0;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 5;
+    bottom: 100vw;
+  }
+}
+@media (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .box ul li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 1;
+      scale: 0;
+      bottom: 0;
+    }
+
+    100% {
+      opacity: 0;
+      scale: 4;
+      bottom: 250vw;
+    }
+  }
+}
